@@ -48,6 +48,7 @@ libc = { version = "0.2.82", optional = true }
 
 matrixmultiply = { version = "0.3.2", default-features = false, features=["cgemm"] }
 
+half = { version = "2", optional = true, default-features = false }
 serde = { version = "1.0", optional = true, default-features = false, features = ["alloc"] }
 rawpointer = { version = "0.2" }
 
@@ -65,6 +66,7 @@ default = ["std"]
 # See README for more instructions
 blas = ["dep:cblas-sys", "dep:libc"]
 
+half = ["dep:half"]
 serde = ["dep:serde"]
 
 std = ["num-traits/std", "matrixmultiply/std"]

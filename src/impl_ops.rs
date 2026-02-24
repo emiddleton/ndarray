@@ -50,6 +50,11 @@ impl ScalarOperand for f64 {}
 impl ScalarOperand for Complex<f32> {}
 impl ScalarOperand for Complex<f64> {}
 
+#[cfg(feature = "half")]
+impl ScalarOperand for half::f16 {}
+#[cfg(feature = "half")]
+impl ScalarOperand for half::bf16 {}
+
 macro_rules! impl_binary_op(
     ($trt:ident, $operator:tt, $mth:ident, $iop:tt, $doc:expr) => (
 /// Perform elementwise
